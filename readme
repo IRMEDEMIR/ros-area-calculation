@@ -1,0 +1,7 @@
+Workspace içerisinde çalışılan paketteki src klasörünün içerisine "alan_hesapla" klasörü eklenir. 
+Klasör içerisindeki "alan_hesapla_client.py" servisinde 5 6  ve 7. satırlarda, "alan_hesapla_server.py" servisinde 3 4 ve 5. satırlarda bulunan paket isimleri değiştirilir.
+Paketin srv klasörüne "alan_hesapla.srv" dosyası atılır.
+Paketin "CMakeList.txt" dosyasında 'add_service_files' a "alan_hesapla.srv", 'find_package' a message_generation eklenir. 'generate_messages' daki kodlar yorum satırından çıkarılır.
+Paketin "package.xml" dosyasında '<build_depend>message_generation</build_depend>'  ve  '<exec_depend>message_runtime</exec_depend>' satırları yorum satırından çıkarılır.
+Terminalde workspace içerisindeki dizinde "catkin_make" komutu çalıştırılarak kod derlenir ve gerekli dosyalar oluşur.
+"rosrun paket_adi alan_hesapla_server.py" komutu ile server çalıştırılır ve termianlde Alan hesaplanıyor.. yazısı görülür, başka bir terminalde "rosrun paket_adi alan_hesapla_client.py kenar1 kenar2" komutu ile client çalıştırılır. kenar1 ve kenar2 yerine sayı girilir. Alan hesabı yapılıp ekrana yazdırılacaktır.
